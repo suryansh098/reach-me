@@ -13,7 +13,7 @@ import Auth from './components/Auth';
 const App = () => {
   
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
     <Container maxwidth="lg">
       <Navbar />
       <Switch>
