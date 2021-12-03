@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/reach-me/static/css/main.ed0506b1.chunk.css",
-    "main.js": "/reach-me/static/js/main.b922ae27.chunk.js",
-    "main.js.map": "/reach-me/static/js/main.b922ae27.chunk.js.map",
+    "main.js": "/reach-me/static/js/main.863b6d7e.chunk.js",
+    "main.js.map": "/reach-me/static/js/main.863b6d7e.chunk.js.map",
     "runtime-main.js": "/reach-me/static/js/runtime-main.206fedb3.js",
     "runtime-main.js.map": "/reach-me/static/js/runtime-main.206fedb3.js.map",
-    "static/js/2.4ca11872.chunk.js": "/reach-me/static/js/2.4ca11872.chunk.js",
-    "static/js/2.4ca11872.chunk.js.map": "/reach-me/static/js/2.4ca11872.chunk.js.map",
+    "static/js/2.2412acc1.chunk.js": "/reach-me/static/js/2.2412acc1.chunk.js",
+    "static/js/2.2412acc1.chunk.js.map": "/reach-me/static/js/2.2412acc1.chunk.js.map",
     "index.html": "/reach-me/index.html",
     "static/css/main.ed0506b1.chunk.css.map": "/reach-me/static/css/main.ed0506b1.chunk.css.map",
-    "static/js/2.4ca11872.chunk.js.LICENSE.txt": "/reach-me/static/js/2.4ca11872.chunk.js.LICENSE.txt",
+    "static/js/2.2412acc1.chunk.js.LICENSE.txt": "/reach-me/static/js/2.2412acc1.chunk.js.LICENSE.txt",
     "static/media/reach-me.9cfa8a46.png": "/reach-me/static/media/reach-me.9cfa8a46.png"
   },
   "entrypoints": [
     "static/js/runtime-main.206fedb3.js",
-    "static/js/2.4ca11872.chunk.js",
+    "static/js/2.2412acc1.chunk.js",
     "static/css/main.ed0506b1.chunk.css",
-    "static/js/main.b922ae27.chunk.js"
+    "static/js/main.863b6d7e.chunk.js"
   ]
 }
