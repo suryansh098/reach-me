@@ -52,11 +52,19 @@ export default makeStyles((theme) => ({
     width: 'fit-content',
     minWidth: '12em'
   },
-  userName: {
+  outerGreeting: {
     display: 'flex',
     alignItems: 'center',
     padding: '5px 10px',
-    color: 'crimson'
+    color: 'crimson',
+    fontWeight: 600
+  },
+  innerGreeting: {
+    display: 'none',
+    alignItems: 'center',
+    padding: '5px 10px',
+    color: 'crimson',
+    fontWeight: 600
   },
   brandContainer: {
     display: 'flex',
@@ -90,6 +98,14 @@ export default makeStyles((theme) => ({
     },
     image: {
       margin: 0
+    },
+  },
+  [theme.breakpoints.down('xs')]: {
+    outerGreeting: {
+      display: 'none'
+    },
+    innerGreeting: {
+      display: 'flex'
     }
   }
 }));

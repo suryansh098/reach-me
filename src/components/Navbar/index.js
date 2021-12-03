@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import {
@@ -34,6 +34,20 @@ const Navbar = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const [showDropDown, setShowDropDown] = useState(false);
+  const dropdown = useRef();
+
+  const handleOutsideClick = (event) => {
+    if (dropdown.current && !dropdown.current.contains(event.target)) {
+      setShowDropDown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  });
 
   const logout = useCallback(() => {
     dispatch({ type: LOGOUT });
@@ -72,7 +86,7 @@ const Navbar = () => {
             ReachMe
           </Typography>
         </div>
-        <Toolbar className={classes.toolbar}>
+        <Toolbar className={classes.toolbar} ref={dropdown}>
           {user ? (
             <div className={classes.profile}>
               <div
@@ -86,12 +100,16 @@ const Navbar = () => {
                 >
                   {user.result.name.charAt(0)}
                 </Avatar>
+
+                <Typography className={classes.outerGreeting} variant="h6">
+                  Hello, {user.result.name.split(" ")[0]}!
+                </Typography>
                 {showDropDown ? <ArrowDropUp /> : <ArrowDropDown />}
               </div>
 
               {showDropDown && (
                 <Card className={classes.dropdown}>
-                  <Typography className={classes.userName} variant="h6">
+                  <Typography className={classes.innerGreeting} variant="h6">
                     Hello, {user.result.name.split(" ")[0]}!
                   </Typography>
 
