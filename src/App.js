@@ -30,6 +30,9 @@ const App = () => {
           <Route path="/create" exact>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
           </Route>
+          <Route path="/edit" exact>
+            <Form currentId={currentId} setCurrentId={setCurrentId} />
+          </Route>
         </Switch>
       </Container>
     </Router>

@@ -6,11 +6,13 @@ import { useDispatch } from 'react-redux';
 
 import { deletePost, likePost } from '../../../actions/posts';
 import useStyles from './styles';
+import { useHistory } from 'react-router';
 
 const Post = ({ post, setCurrentId }) => {
   // console.log(post);
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = JSON.parse(localStorage.getItem('profile'));
 
   const Likes = () => {
@@ -25,6 +27,11 @@ const Post = ({ post, setCurrentId }) => {
 
     return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
   };
+
+  const editPost = (postId) => {
+    setCurrentId(postId);
+    history.push('/edit');
+  }
   
   return (
     <Card className={classes.card}>
@@ -38,7 +45,7 @@ const Post = ({ post, setCurrentId }) => {
       {/* Show only if current user is the creator of the post */}
       {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
         <div className={classes.overlay2}>
-          <Button style={{color: "white"}} size="small" onClick={() => setCurrentId(post._id)}>
+          <Button style={{color: "white"}} size="small" onClick={() => editPost(post._id)}>
             <MoreHoriz fontSize="medium" />
           </Button>
         </div>
